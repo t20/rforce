@@ -3,19 +3,20 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
         <script src="{{ url_for('static', filename='js/rforce.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" media="screen" charset="utf-8">
     </head>
     <body>
-        <div id="name-search" ng-controller="UserCtrl">
+        <div class="container" id="name-search" ng-controller="UserCtrl">
             <h2>Search</h2>
 
-            <form ng-submit="search()">
+            <form class="form-inline" ng-submit="search()">
                 <input type="text" ng-model="q" size="30"
                     placeholder="search by name">
                 <input type="submit" value="Search" class="btn-primary">
             </form>
         
             <div>
-                <table border="0">
+                <table class="table table-striped table-bordered table-hover">
                     <tr>
                         <th>Name</th>
                         <th>Skill</th>
