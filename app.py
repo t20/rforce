@@ -37,5 +37,5 @@ def get_readyforce_data(q, limit=10):
 
 
 if __name__ == '__main__':
-    app.debug = True
+    #app.debug = True
     app.run()
