@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="{{ url_for('static', filename='js/rforce.js') }}"></script>
+    </head>
+    <body>
+        <div id="name-search" ng-controller="UserCtrl">
+            <h2>Search</h2>
+
+            <form ng-submit="search()">
+                <input type="text" ng-model="q" size="30"
+                    placeholder="search by name">
+                <input type="submit" value="Search" class="btn-primary">
+            </form>
+        
+            <div>
+                <table border="0">
+                    <tr>
+                        <th>Name</th>
+                        <th>Skill</th>
+                        <th>Bio</th>
+                    </tr>
+                    {% raw %}
+                        <tr ng-repeat="user in users">
+                            <td>{{ user.name }}</td>
+                            <td><img height=80 width=80 src="{{ user.photo_url }}"></td>
+                            <td>{{ user.description }}</td>
+                        </tr>
+                    {% endraw %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
