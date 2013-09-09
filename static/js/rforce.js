@@ -1,6 +1,7 @@
 function UserCtrl($scope, $http) {
     
     $scope.users = [];
+    $scope.desc_limit = 50;
         
     $scope.search = function() {
         // console.log('searching..');
